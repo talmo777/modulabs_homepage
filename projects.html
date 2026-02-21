@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 | 모두의 문제 연구소</title>
+    <meta name="description" content="모두의 문제 연구소의 데이터 기반 사회 문제 해결 프로젝트 목록">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">모두의 <span class="logo-highlight">문제</span> 연구소</a>
+            <div class="nav-links" id="nav-links">
+                <a href="about.html">소개</a>
+                <a href="projects.html" class="active">프로젝트</a>
+                <a href="members.html">연구원</a>
+                <a href="department.html">수리데이터사이언스학과</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="container reveal-up">
+                <div class="page-hero-label">Projects</div>
+                <h1>데이터로 증명하고,<br>코드로 구축한 해결책</h1>
+                <p>우리는 사회 주변의 문제를 직접 정의하고, 수학적 모델로 분석하여 실질적인 해결 방향을 제시합니다.</p>
+            </div>
+        </div>
+
+        <!-- Filter & Grid -->
+        <section>
+            <div class="container">
+                <!-- Stats row -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 4rem;"
+                    class="reveal-up">
+                    <div class="glass-card" style="text-align: center; padding: 1.5rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #10b981;">1</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.3rem;">완료된 프로젝트</div>
+                    </div>
+                    <div class="glass-card" style="text-align: center; padding: 1.5rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #3b82f6;">1</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.3rem;">진행 중</div>
+                    </div>
+                    <div class="glass-card" style="text-align: center; padding: 1.5rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #8b5cf6;">1</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.3rem;">진행 예정</div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div style="display: flex; gap: 1rem; margin-bottom: 3rem; justify-content: center; flex-wrap: wrap;"
+                    class="reveal-up stagger-1" id="project-filters">
+                    <button class="btn btn-outline active-filter" data-filter="all"
+                        style="border-color: var(--accent-blue); background: rgba(79, 110, 247, 0.1);">전체보기</button>
+                    <button class="btn btn-outline" data-filter="ongoing">진행중</button>
+                    <button class="btn btn-outline" data-filter="completed">완료</button>
+                    <button class="btn btn-outline" data-filter="planned">진행 예정</button>
+                </div>
+
+                <!-- Cards Grid -->
+                <div id="projects-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 2rem;">
+                    <!-- JS 렌더링 영역 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work -->
+        <section style="background: linear-gradient(to right, rgba(26, 31, 53, 0.3), transparent);">
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">프로젝트 진행 방식</h2>
+                    <p class="section-subtitle" style="margin: 1rem auto 0;">체계적인 프로세스로 아이디어를 실제 해결책으로 만들어냅니다.</p>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; position: relative;">
+                    <!-- connector line -->
+                    <div style="position: absolute; top: 2.5rem; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple)); z-index: 0; display: none;"
+                        id="connector-line"></div>
+                    <div class="reveal-up stagger-1"
+                        style="text-align: center; padding: 2rem 1rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 56px; height: 56px; border-radius: 50%; background: rgba(79,110,247,0.15); border: 2px solid var(--accent-blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 800; font-size: 1.1rem; color: var(--accent-blue);">
+                            01</div>
+                        <h4 style="margin-bottom: 0.5rem;">문제 정의</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">해결할 사회 문제를 명확하게
+                            정의하고 범위를 설정합니다.</p>
+                    </div>
+                    <div class="reveal-up stagger-2"
+                        style="text-align: center; padding: 2rem 1rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 56px; height: 56px; border-radius: 50%; background: rgba(124,58,237,0.15); border: 2px solid var(--accent-purple); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 800; font-size: 1.1rem; color: var(--accent-purple);">
+                            02</div>
+                        <h4 style="margin-bottom: 0.5rem;">데이터 수집</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">공공 데이터 포털, API 등을
+                            통해 필요한 데이터를 수집·정제합니다.</p>
+                    </div>
+                    <div class="reveal-up stagger-3"
+                        style="text-align: center; padding: 2rem 1rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 56px; height: 56px; border-radius: 50%; background: rgba(16,185,129,0.15); border: 2px solid #10b981; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 800; font-size: 1.1rem; color: #10b981;">
+                            03</div>
+                        <h4 style="margin-bottom: 0.5rem;">모델링 · 분석</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">통계·머신러닝 모델을 구축하고
+                            패턴과 인사이트를 도출합니다.</p>
+                    </div>
+                    <div class="reveal-up stagger-4"
+                        style="text-align: center; padding: 2rem 1rem; position: relative; z-index: 1;">
+                        <div
+                            style="width: 56px; height: 56px; border-radius: 50%; background: rgba(245,158,11,0.15); border: 2px solid #f59e0b; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 800; font-size: 1.1rem; color: #f59e0b;">
+                            04</div>
+                        <h4 style="margin-bottom: 0.5rem;">제안 · 공유</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">결과를 보고서로 정리하고, 관련
+                            기관에 정책 대안을 제안합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA - 새 프로젝트 제안 -->
+        <section style="text-align: center;">
+            <div class="container reveal-up" style="max-width: 650px;">
+                <h2 class="section-title">풀고 싶은 문제가 있나요?</h2>
+                <p style="color: var(--text-secondary); margin: 1.5rem 0 3rem; line-height: 1.9;">어떤 주변 문제든 데이터로 접근할 수
+                    있습니다. 연구원으로 합류하거나 협업을 제안해 주세요.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="apply.html" class="btn btn-primary"><i class="ri-user-add-line"></i> 연구원 지원하기</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="ri-mail-line"></i> 협업 문의</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal"
+        style="position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <div class="glass-card"
+            style="width: 100%; max-width: 800px; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(20px); transition: transform 0.3s ease;"
+            id="modal-content-area">
+            <button id="close-modal"
+                style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: white; z-index: 1;"><i
+                    class="ri-close-line"></i></button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">모두의 <span class="logo-highlight">문제</span> 연구소
+                    </h3>
+                    <p style="color: var(--text-secondary); max-width: 300px; line-height: 1.8;">수리데이터사이언스학과 공식
+                        학회<br>Data for All, Solutions for Society.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Pages</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <a href="about.html" style="color: var(--text-secondary);">연구소 소개</a>
+                        <a href="projects.html" style="color: var(--text-secondary);">프로젝트</a>
+                        <a href="members.html" style="color: var(--text-secondary);">연구원</a>
+                        <a href="department.html" style="color: var(--text-secondary);">수리데이터사이언스학과</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <a href="https://instagram.com" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                        <i class="ri-instagram-line" style="font-size: 1.5rem; color: #E1306C;"></i>
+                        <span>@modu_problem_lab</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copy">&copy; 2024 모두의 문제 연구소. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/projects-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initNavigation();
+            initParticles();
+            initScrollAnimations();
+            renderProjects('all');
+            initProjectFilters();
+            initProjectModal();
+        });
+
+        function renderProjects(filter) {
+            var grid = document.getElementById('projects-grid');
+            grid.innerHTML = '';
+            var filtered = filter === 'all' ? projects : projects.filter(function (p) { return p.status === filter; });
+            filtered.forEach(function (project, index) {
+                var delayClass = 'stagger-' + ((index % 4) + 1);
+                var statusColor, statusText;
+                if (project.status === 'ongoing') { statusColor = '#3b82f6'; statusText = '진행중'; }
+                else if (project.status === 'completed') { statusColor = '#10b981'; statusText = '완료'; }
+                else { statusColor = '#8b5cf6'; statusText = '예정'; }
+                var card = document.createElement('div');
+                card.className = 'glass-card reveal-up ' + delayClass;
+                card.style.cssText = 'padding: 0; overflow: hidden; cursor: pointer; display: flex; flex-direction: column;';
+                card.innerHTML = '<div style="height: 220px; overflow: hidden; position: relative;"><img src="' + project.thumbnail + '" alt="' + project.title + '" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" class="card-img"><div style="position: absolute; top: 1rem; right: 1rem; background: ' + statusColor + '; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">' + statusText + '</div><div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,11,20,0.5), transparent);"></div></div><div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;"><div style="color: var(--accent-blue); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">' + project.category + '</div><h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; line-height: 1.4;">' + project.title + '</h3><p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.7;">' + project.summary + '</p><div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">' + project.tags.map(function (t) { return '<span class="tag-pill">#' + t + '</span>'; }).join('') + '</div><div style="color: var(--accent-blue); font-size: 0.85rem; font-weight: 600;">자세히 보기 →</div></div>';
+                card.addEventListener('mouseenter', function () { card.querySelector('.card-img').style.transform = 'scale(1.06)'; });
+                card.addEventListener('mouseleave', function () { card.querySelector('.card-img').style.transform = 'scale(1)'; });
+                card.addEventListener('click', function () { openProjectModal(project, statusColor, statusText); });
+                grid.appendChild(card);
+            });
+            setTimeout(initScrollAnimations, 50);
+        }
+
+        function initProjectFilters() {
+            var btns = document.querySelectorAll('#project-filters button');
+            btns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    btns.forEach(function (b) { b.classList.remove('active-filter'); b.style.borderColor = 'var(--border-light)'; b.style.background = 'transparent'; });
+                    e.target.classList.add('active-filter');
+                    e.target.style.borderColor = 'var(--accent-blue)';
+                    e.target.style.background = 'rgba(79,110,247,0.1)';
+                    var grid = document.getElementById('projects-grid');
+                    grid.style.opacity = '0';
+                    grid.style.transition = 'opacity 0.3s ease';
+                    setTimeout(function () { renderProjects(e.target.getAttribute('data-filter')); grid.style.opacity = '1'; }, 300);
+                });
+            });
+        }
+
+        function initProjectModal() {
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('project-modal').addEventListener('click', function (e) { if (e.target.id === 'project-modal') closeModal(); });
+        }
+
+        function openProjectModal(project, statusColor, statusText) {
+            var modal = document.getElementById('project-modal');
+            var body = document.getElementById('modal-body');
+            var area = document.getElementById('modal-content-area');
+            body.innerHTML = '<div style="width:100%;height:300px;border-radius:12px;overflow:hidden;margin-bottom:2rem;"><img src="' + project.thumbnail + '" style="width:100%;height:100%;object-fit:cover;"></div><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="background:' + statusColor + ';color:white;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.8rem;font-weight:600;">' + statusText + '</span><span style="color:var(--text-secondary);">' + project.date + '</span></div><h2 style="font-size:1.8rem;margin-bottom:1.5rem;">' + project.title + '</h2><div style="color:rgba(255,255,255,0.9);line-height:1.9;font-size:1rem;margin-bottom:2rem;">' + project.description.replace(/\n/g, '<br>') + '</div><div style="display:flex;gap:0.5rem;flex-wrap:wrap;">' + project.tags.map(function (t) { return '<span style="background:rgba(79,110,247,0.1);border:1px solid var(--accent-blue);color:#a5b4fc;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.9rem;">#' + t + '</span>'; }).join('') + '</div>';
+            modal.style.opacity = '1'; modal.style.pointerEvents = 'auto';
+            area.style.transform = 'translateY(0)'; document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('project-modal');
+            var area = document.getElementById('modal-content-area');
+            modal.style.opacity = '0'; modal.style.pointerEvents = 'none';
+            area.style.transform = 'translateY(20px)'; document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+
+</html>

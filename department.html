@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수리데이터사이언스학과 | 모두의 문제 연구소</title>
+    <meta name="description" content="모두의 문제 연구소가 속한 수리데이터사이언스학과와 지도 교수님을 소개합니다.">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">모두의 <span class="logo-highlight">문제</span> 연구소</a>
+            <div class="nav-links" id="nav-links">
+                <a href="about.html">소개</a>
+                <a href="projects.html">프로젝트</a>
+                <a href="members.html">연구원</a>
+                <a href="department.html" class="active">수리데이터사이언스학과</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="container reveal-up">
+                <div class="page-hero-label">Department</div>
+                <h1>수리데이터사이언스학과</h1>
+                <p>현대 사회의 복잡한 문제를 데이터에 기반하여 수학적으로 모델링하고 알고리즘으로 해결하는 융합 학문을 탐구합니다.</p>
+            </div>
+        </div>
+
+        <!-- Department Intro -->
+        <section>
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+                    <div class="reveal-left">
+                        <div class="page-hero-label" style="margin-bottom: 1.5rem;">학과 소개</div>
+                        <h2 class="section-title" style="font-size: 2.2rem;">데이터와 수학의<br>최전선</h2>
+                        <div class="section-divider"></div>
+                        <p
+                            style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem;">
+                            수리데이터사이언스학과는 현대 사회의 각종 방대하고 복잡한 문제들을 <strong style="color: white;">데이터에 기반하여 수학적으로
+                                모델링</strong>하고, 알고리즘을 통해 해결 방법을 탐구하는 융합 학문을 배웁니다.</p>
+                        <p
+                            style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.9; margin-bottom: 2rem;">
+                            통계학, 응용수학, 컴퓨터과학을 아우르는 커리큘럼으로 미래 데이터 사이언티스트와 수리 모델링 전문가를 양성합니다.</p>
+                        <a href="https://math.example.com" target="_blank" class="btn btn-outline"
+                            style="border-color: var(--accent-purple);">
+                            <i class="ri-external-link-line"></i> 학과 홈페이지 방문
+                        </a>
+                    </div>
+                    <div class="reveal-right">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="glass-card" style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <div
+                                    style="width: 48px; height: 48px; background: rgba(79,110,247,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="ri-function-line"
+                                        style="color: var(--accent-blue); font-size: 1.3rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; margin-bottom: 0.3rem;">수학 · 통계 기초</div>
+                                    <div style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                        미적분학, 선형대수, 수리통계학, 확률론 등 탄탄한 수학적 기초를 다집니다.</div>
+                                </div>
+                            </div>
+                            <div class="glass-card" style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <div
+                                    style="width: 48px; height: 48px; background: rgba(124,58,237,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="ri-cpu-line" style="color: var(--accent-purple); font-size: 1.3rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; margin-bottom: 0.3rem;">머신러닝 · AI</div>
+                                    <div style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                                        지도학습, 비지도학습, 딥러닝, 자연어처리 등 최신 AI 기법을 학습합니다.</div>
+                                </div>
+                            </div>
+                            <div class="glass-card" style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <div
+                                    style="width: 48px; height: 48px; background: rgba(16,185,129,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="ri-database-line" style="color: #10b981; font-size: 1.3rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; margin-bottom: 0.3rem;">데이터 엔지니어링</div>
+                                    <div style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">데이터
+                                        수집, 정제, 파이프라인 구축 등 실무에 바로 적용 가능한 기술을 습득합니다.</div>
+                                </div>
+                            </div>
+                            <div class="glass-card" style="display: flex; gap: 1.2rem; align-items: flex-start;">
+                                <div
+                                    style="width: 48px; height: 48px; background: rgba(245,158,11,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="ri-pie-chart-2-line" style="color: #f59e0b; font-size: 1.3rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-weight: 700; margin-bottom: 0.3rem;">데이터 시각화 · 인사이트</div>
+                                    <div style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">분석
+                                        결과를 명확하게 전달하는 시각화 역량과 비즈니스 인사이트 도출 능력을 키웁니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professors -->
+        <section style="background: linear-gradient(to right, rgba(26, 31, 53, 0.3), transparent);">
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 class="section-title">지도 교수님</h2>
+                    <p class="section-subtitle" style="margin: 1rem auto 0;">모두의 문제 연구소를 이끌어 주시는 교수님들입니다.</p>
+                </div>
+                <div id="professors-grid"
+                    style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 900px; margin: 0 auto;">
+                    <!-- JS 렌더링 영역 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Study Here -->
+        <section>
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">왜 수리데이터사이언스인가?</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+                    <div class="glass-card reveal-up stagger-1" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <h4 style="margin-bottom: 0.8rem;">취업률 상위권</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">데이터 사이언티스트, ML
+                            엔지니어, 통계 분석가 등 고수요 직종으로의 취업 경쟁력이 높습니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-2" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
+                        <h4 style="margin-bottom: 0.8rem;">연구 친화적 환경</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">학부 때부터 교수님 연구실 및
+                            학회 참여가 활발하여 연구 역량을 일찍 키울 수 있습니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-3" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌐</div>
+                        <h4 style="margin-bottom: 0.8rem;">다학제 융합</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">수학, CS, 통계, 사회과학이
+                            융합된 커리큘럼으로 다양한 분야 문제를 해결할 역량을 갖춥니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-4" style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                        <h4 style="margin-bottom: 0.8rem;">산학협력</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">기업과 공공기관과의 협력
+                            프로젝트를 통해 실무 경험과 인맥을 쌓을 수 있는 기회가 많습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center; padding: 6rem 0;">
+            <div class="container reveal-up" style="max-width: 650px;">
+                <h2 class="section-title">연구소와 함께하기</h2>
+                <p style="color: var(--text-secondary); margin: 1.5rem 0 3rem; line-height: 1.9;">수리데이터사이언스학과의 일원으로서,
+                    모두의 문제 연구소에서 함께 세상의 문제를 풀어봐요.</p>
+                <a href="apply.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;"><i
+                        class="ri-user-add-line"></i> 연구원 지원하기</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">모두의 <span class="logo-highlight">문제</span> 연구소
+                    </h3>
+                    <p style="color: var(--text-secondary); max-width: 300px; line-height: 1.8;">수리데이터사이언스학과 공식
+                        학회<br>Data for All, Solutions for Society.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Pages</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <a href="about.html" style="color: var(--text-secondary);">연구소 소개</a>
+                        <a href="projects.html" style="color: var(--text-secondary);">프로젝트</a>
+                        <a href="members.html" style="color: var(--text-secondary);">연구원</a>
+                        <a href="department.html" style="color: var(--text-secondary);">수리데이터사이언스학과</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <a href="https://instagram.com" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                        <i class="ri-instagram-line" style="font-size: 1.5rem; color: #E1306C;"></i>
+                        <span>@modu_problem_lab</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copy">&copy; 2024 모두의 문제 연구소. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/department-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initNavigation();
+            initParticles();
+            initScrollAnimations();
+            renderProfessors();
+        });
+
+        function renderProfessors() {
+            var grid = document.getElementById('professors-grid');
+            if (!grid) return;
+            grid.innerHTML = departmentInfo.professors.map(function (prof, index) {
+                return '<div class="glass-card reveal-up stagger-' + (index + 1) + '" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;"><div style="text-align: center;"><img src="' + prof.image + '" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(79,110,247,0.4); display: block;"></div><div><h3 style="font-size: 1.4rem; margin-bottom: 0.3rem;">' + prof.name + '</h3><div style="color: var(--accent-purple); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.8rem;">' + prof.title + '</div><div style="margin-bottom: 1rem;"><span style="background: rgba(79,110,247,0.1); border: 1px solid rgba(79,110,247,0.3); color: #a5b4fc; padding: 0.25rem 0.8rem; border-radius: 4px; font-size: 0.8rem;">연구분야: ' + prof.research + '</span></div><p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; font-style: italic; border-left: 3px solid rgba(124,58,237,0.4); padding-left: 1rem;">"' + prof.description + '"</p></div></div>';
+            }).join('');
+            setTimeout(initScrollAnimations, 50);
+        }
+    </script>
+</body>
+
+</html>

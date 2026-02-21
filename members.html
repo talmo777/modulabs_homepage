@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구원 | 모두의 문제 연구소</title>
+    <meta name="description" content="모두의 문제 연구소의 연구원들을 소개합니다.">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">모두의 <span class="logo-highlight">문제</span> 연구소</a>
+            <div class="nav-links" id="nav-links">
+                <a href="about.html">소개</a>
+                <a href="projects.html">프로젝트</a>
+                <a href="members.html" class="active">연구원</a>
+                <a href="department.html">수리데이터사이언스학과</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="container reveal-up">
+                <div class="page-hero-label">Members</div>
+                <h1>세상을 향한 호기심을<br>데이터로 풀어내는 사람들</h1>
+                <p>각자의 전문성으로 뭉친 연구원들이 함께 사회 문제의 해답을 찾아갑니다.</p>
+            </div>
+        </div>
+
+        <!-- Members Grid -->
+        <section>
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 1rem;">
+                    <h2 class="section-title">연구원 소개</h2>
+                    <p class="section-subtitle" style="margin: 1rem auto 4rem;">카드에 마우스를 올려 연구원에 대해 더 알아보세요.</p>
+                </div>
+                <div id="members-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; perspective: 1000px;">
+                    <!-- JS 렌더링 영역 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Section -->
+        <section style="background: linear-gradient(to right, rgba(26, 31, 53, 0.3), transparent);">
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title">우리의 문화</h2>
+                    <p class="section-subtitle" style="margin: 1rem auto 0;">모두의 문제 연구소에서 함께하는 즐거운 활동들</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="glass-card reveal-up stagger-1">
+                        <i class="ri-book-read-line"
+                            style="font-size: 2.5rem; color: var(--accent-blue); display: block; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.8rem;">정기 세미나</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">매주 연구원들이 돌아가며 최신 논문, 분석 기법, 프로젝트 진행
+                            상황을 공유하는 학습 세미나를 진행합니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-2">
+                        <i class="ri-code-s-slash-line"
+                            style="font-size: 2.5rem; color: var(--accent-purple); display: block; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.8rem;">해커톤 · 데이터톤</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">학기별로 팀을 구성해 24~48시간 동안 실제 데이터셋을 분석하고
+                            솔루션을 겨루는 인터널 해커톤을 개최합니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-3">
+                        <i class="ri-user-star-line"
+                            style="font-size: 2.5rem; color: #10b981; display: block; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.8rem;">선후배 멘토링</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">선배 연구원들이 신입 연구원을 1:1로 코드 리뷰, 커리어 상담,
+                            분석 피드백 등을 통해 성장을 돕습니다.</p>
+                    </div>
+                    <div class="glass-card reveal-up stagger-4">
+                        <i class="ri-presentation-line"
+                            style="font-size: 2.5rem; color: #f59e0b; display: block; margin-bottom: 1rem;"></i>
+                        <h3 style="margin-bottom: 0.8rem;">외부 컨퍼런스</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">KDD, Pycon Korea, 통계학회 등 외부 컨퍼런스 참가를
+                            지원하며, 연구원들의 시야를 넓힐 수 있는 기회를 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Cloud -->
+        <section>
+            <div class="container">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 3rem;">
+                    <h2 class="section-title">우리가 다루는 기술</h2>
+                </div>
+                <div class="reveal-up"
+                    style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; max-width: 800px; margin: 0 auto;">
+                    <span
+                        style="background: rgba(79,110,247,0.15); border: 1px solid rgba(79,110,247,0.4); color: #a5b4fc; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Python</span>
+                    <span
+                        style="background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4); color: #c4b5fd; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">R</span>
+                    <span
+                        style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Pandas
+                        / NumPy</span>
+                    <span
+                        style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #fcd34d; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Scikit-learn</span>
+                    <span
+                        style="background: rgba(79,110,247,0.15); border: 1px solid rgba(79,110,247,0.4); color: #a5b4fc; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">TensorFlow
+                        / PyTorch</span>
+                    <span
+                        style="background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4); color: #c4b5fd; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Matplotlib
+                        / Seaborn</span>
+                    <span
+                        style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">GeoPandas
+                        / Folium</span>
+                    <span
+                        style="background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #fcd34d; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">SQL</span>
+                    <span
+                        style="background: rgba(79,110,247,0.15); border: 1px solid rgba(79,110,247,0.4); color: #a5b4fc; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Spark</span>
+                    <span
+                        style="background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4); color: #c4b5fd; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Tableau
+                        / Power BI</span>
+                    <span
+                        style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">Git
+                        / GitHub</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); color: var(--text-secondary); padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">통계적
+                        추론</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); color: var(--text-secondary); padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">수학적
+                        모델링</span>
+                    <span
+                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); color: var(--text-secondary); padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600;">자연어처리(NLP)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join CTA -->
+        <section style="text-align: center; padding: 6rem 0;">
+            <div class="container reveal-up" style="max-width: 650px;">
+                <h2 class="section-title">다음 연구원은 당신입니다</h2>
+                <p style="color: var(--text-secondary); margin: 1.5rem 0 3rem; line-height: 1.9;">데이터 분석 경험이 부족해도 괜찮습니다.
+                    문제를 집요하게 파고드는 집념과 세상을 이롭게 하려는 따뜻한 시선만 있다면 됩니다.</p>
+                <a href="apply.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;"><i
+                        class="ri-heart-line"></i> 연구원 지원하기</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">모두의 <span class="logo-highlight">문제</span> 연구소
+                    </h3>
+                    <p style="color: var(--text-secondary); max-width: 300px; line-height: 1.8;">수리데이터사이언스학과 공식
+                        학회<br>Data for All, Solutions for Society.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Pages</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                        <a href="about.html" style="color: var(--text-secondary);">연구소 소개</a>
+                        <a href="projects.html" style="color: var(--text-secondary);">프로젝트</a>
+                        <a href="members.html" style="color: var(--text-secondary);">연구원</a>
+                        <a href="department.html" style="color: var(--text-secondary);">수리데이터사이언스학과</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <a href="https://instagram.com" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                        <i class="ri-instagram-line" style="font-size: 1.5rem; color: #E1306C;"></i>
+                        <span>@modu_problem_lab</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copy">&copy; 2024 모두의 문제 연구소. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/members-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            initNavigation();
+            initParticles();
+            initScrollAnimations();
+            renderMembers();
+        });
+
+        function renderMembers() {
+            var grid = document.getElementById('members-grid');
+            grid.innerHTML = '';
+            members.forEach(function (member, index) {
+                var delayClass = 'stagger-' + ((index % 4) + 1);
+                var card = document.createElement('div');
+                card.className = 'flip-card reveal-up ' + delayClass;
+                card.style.height = '370px';
+                card.innerHTML = '<div class="flip-card-inner"><div class="flip-card-front glass-card" style="padding: 0; display: flex; flex-direction: column;"><div style="height: 60%; overflow: hidden;"><img src="' + member.image + '" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%);"></div><div style="padding: 1.5rem; text-align: left;"><div style="color: var(--accent-blue); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem;">' + member.role + '</div><h3 style="font-size: 1.3rem; margin-bottom: 0.3rem;">' + member.name + '</h3><div style="color: var(--text-secondary); font-size: 0.9rem;">' + member.major + '</div><div style="margin-top: 0.8rem; color: rgba(255,255,255,0.3); font-size: 0.75rem;">hover to see more</div></div></div><div class="flip-card-back"><div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-bottom: 1rem; border: 2px solid var(--accent-blue);"><img src="' + member.image + '" style="width: 100%; height: 100%; object-fit: cover;"></div><h3 style="font-size: 1.3rem; margin-bottom: 0.2rem; color: var(--accent-blue);">' + member.name + '</h3><div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;">' + member.major + '</div><div style="width: 40px; height: 2px; background: var(--accent-purple); margin-bottom: 1.2rem;"></div><p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.7; text-align: center;">"' + member.description + '"</p></div></div>';
+                grid.appendChild(card);
+            });
+            setTimeout(initScrollAnimations, 50);
+        }
+    </script>
+</body>
+
+</html>

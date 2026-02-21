@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모두의 문제 연구소 | Data for All</title>
+  <meta name="description" content="주변의 문제를 수리데이터사이언스적 시각으로 바라보며 해결하는 모두의 문제 연구소">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">모두의 <span class="logo-highlight">문제</span> 연구소</a>
+      <div class="nav-links" id="nav-links">
+        <a href="about.html">소개</a>
+        <a href="projects.html">프로젝트</a>
+        <a href="members.html">연구원</a>
+        <a href="department.html">수리데이터사이언스학과</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero"
+      style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: var(--nav-height);">
+      <div class="container">
+        <div class="reveal-up">
+          <div class="page-hero-label" style="margin-bottom: 2rem;">수리데이터사이언스학과 공식 학회</div>
+          <h1 style="font-size: clamp(2.8rem, 6vw, 5rem); margin-bottom: 2rem; font-weight: 800; letter-spacing: -2px;">
+            세상의 모든 문제,<br>
+            <span
+              style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">데이터</span>로
+            해답을 찾다
+          </h1>
+          <p
+            style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem; line-height: 1.9;">
+            <span id="typing-text"></span><span class="typing-cursor"></span>
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="projects.html" class="btn btn-primary"><i class="ri-bar-chart-2-line"></i> 프로젝트 보기</a>
+            <a href="apply.html" class="btn btn-outline"><i class="ri-user-add-line"></i> 연구원 지원하기</a>
+          </div>
+        </div>
+
+        <!-- scroll indicator -->
+        <div
+          style="position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0.5;">
+          <span style="font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 0.1em;">SCROLL</span>
+          <div
+            style="width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent-blue), transparent);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section
+      style="padding: 4rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;"
+          class="reveal-up">
+          <div class="stat-box">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">진행/완료 프로젝트</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">활동 연구원</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">2</span>
+            <span class="stat-label">지도 교수님</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">해결할 문제들</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview: 3 Main Pillars -->
+    <section>
+      <div class="container">
+        <div class="reveal-up" style="text-align: center; margin-bottom: 5rem;">
+          <h2 class="section-title">우리가 하는 일</h2>
+          <p class="section-subtitle" style="margin: 1rem auto 0;">직관이 아닌 데이터와 수학으로, 우리 주변의 문제를 정의하고 해결합니다.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <a href="about.html" class="glass-card reveal-up stagger-1"
+            style="display: block; text-decoration: none; position: relative; overflow: hidden;">
+            <div style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1.2rem;"><i
+                class="ri-eye-line"></i></div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">관찰 · 분석 · 해결</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">일상의 불편함과 소외층의 문제를
+              수리데이터사이언스적 시각으로 포착하고, 수학적 모델로 해결책을 도출합니다.</p>
+            <span style="color: var(--accent-blue); font-size: 0.9rem; font-weight: 600;">연구소 소개 →</span>
+          </a>
+          <a href="projects.html" class="glass-card reveal-up stagger-2" style="display: block; text-decoration: none;">
+            <div style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1.2rem;"><i
+                class="ri-folder-chart-2-line"></i></div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">데이터 기반 프로젝트</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">쓰레기 무단투기 분석, 교통 혼잡도 예측, 복지
+              사각지대 탐지 등 실제 사회 문제에 도전합니다.</p>
+            <span style="color: var(--accent-purple); font-size: 0.9rem; font-weight: 600;">프로젝트 보기 →</span>
+          </a>
+          <a href="apply.html" class="glass-card reveal-up stagger-3" style="display: block; text-decoration: none;">
+            <div style="font-size: 2.5rem; color: #10b981; margin-bottom: 1.2rem;"><i class="ri-seedling-line"></i>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.8rem;">함께 성장하기</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">완벽한 실력보다 문제를 집요하게 파고드는 집념을
+              가진 분을 기다립니다. 당신의 가능성에 문이 열려있습니다.</p>
+            <span style="color: #10b981; font-size: 0.9rem; font-weight: 600;">지원하기 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project Preview -->
+    <section style="background: linear-gradient(to right, rgba(26, 31, 53, 0.3), transparent); padding: 6rem 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+          <div class="reveal-left">
+            <div class="page-hero-label" style="margin-bottom: 1.5rem;">Featured Project</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">대중교통 혼잡도 예측 및<br>개선 모델링</h2>
+            <div class="section-divider"></div>
+            <p style="color: var(--text-secondary); line-height: 1.9; margin-bottom: 2rem;">버스 승하차 API 데이터와 기상 데이터를 융합
+              분석하여, 정류장별 혼잡도를 실시간 예측합니다. 승객 불편을 최소화하도록 지자체에 배차 개선안을 제안합니다.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+              <span class="tag-pill">#시계열분석</span>
+              <span class="tag-pill">#교통데이터</span>
+              <span class="tag-pill">#시뮬레이션</span>
+            </div>
+            <a href="projects.html" class="btn btn-outline">더 많은 프로젝트 보기</a>
+          </div>
+          <div class="reveal-right">
+            <div class="glass-card" style="padding: 0; overflow: hidden;">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800"
+                alt="대중교통 프로젝트" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+              <div style="padding: 1.5rem; display: flex; align-items: center; gap: 0.8rem;">
+                <div
+                  style="background: #3b82f6; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                  진행중</div>
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">2024.01 - 진행중</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align: center;">
+      <div class="container reveal-up" style="max-width: 700px;">
+        <h2 class="section-title" style="font-size: 2.5rem;">지금 바로 시작하세요</h2>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; margin: 1.5rem 0 3rem; line-height: 1.9;">산학협력 파트너십
+          문의나 연구원 지원 모두 환영합니다. 작은 첫 걸음이 세상을 바꾸는 시작입니다.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary"><i class="ri-mail-send-line"></i> 비즈니스 제안</a>
+          <a href="apply.html" class="btn btn-outline"><i class="ri-heart-line"></i> 연구원 지원</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">모두의 <span class="logo-highlight">문제</span> 연구소</h3>
+          <p style="color: var(--text-secondary); max-width: 300px; line-height: 1.8;">수리데이터사이언스학과 공식 학회<br>Data for
+            All, Solutions for Society.</p>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 1rem;">Pages</h4>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="about.html" style="color: var(--text-secondary); transition: color 0.2s;"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color=''">연구소 소개</a>
+            <a href="projects.html" style="color: var(--text-secondary); transition: color 0.2s;"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color=''">프로젝트</a>
+            <a href="members.html" style="color: var(--text-secondary); transition: color 0.2s;"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color=''">연구원</a>
+            <a href="department.html" style="color: var(--text-secondary); transition: color 0.2s;"
+              onmouseover="this.style.color='white'" onmouseout="this.style.color=''">수리데이터사이언스학과</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+          <a href="https://instagram.com" target="_blank"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); transition: color 0.2s;"
+            onmouseover="this.style.color='white'" onmouseout="this.style.color=''">
+            <i class="ri-instagram-line" style="font-size: 1.5rem; color: #E1306C;"></i>
+            <span>@modu_problem_lab</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-copy">&copy; 2024 모두의 문제 연구소. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="./js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      initNavigation();
+      initParticles();
+      initScrollAnimations();
+      initTypingEffect([
+        "우리는 데이터로 더 나은 세상을 만듭니다.",
+        "직관을 넘어선 수학적 분석과 추론.",
+        "주변의 작은 문제에서 시작되는 거대한 혁신.",
+        "모두를 위한 데이터 사이언스 연구소."
+      ]);
+    });
+  </script>
+</body>
+
+</html>
